@@ -1,0 +1,100 @@
+#leaves {
+    width: 100px;
+    text-align: right; 
+}
+
+#leaves i {
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+    background: linear-gradient(to bottom right, #e72e00, #eb4e05);
+    transform: skew(20deg);
+    border-radius: 40% 40%;
+    box-shadow: 0px 0px 25px #d34114;
+    z-index: 1;
+    animation: falling 3s 0s infinite;
+}
+
+#leaves i:nth-of-type(2n) { animation: falling2 2.25s 0s infinite; }
+#leaves i:nth-of-type(3n) { animation: falling3 2.25s 0s infinite; }
+
+#leaves i:nth-of-type(n)    { height:23px; width:5px; }
+
+#leaves i:nth-of-type(2n+1)    { height:11px; width:4px; }
+
+#leaves i:nth-of-type(3n+2)  { height:17px; width:3px; }
+
+#leaves i:nth-of-type(n)   { animation-delay: 1.2s;}
+#leaves i:nth-of-type(2n)  { animation-delay: 3.9s;}
+#leaves i:nth-of-type(3n)  { animation-delay: 2.3s;}
+#leaves i:nth-of-type(4n)  { animation-delay: 3.4s;}
+#leaves i:nth-of-type(5n)  { animation-delay: 4s;  }
+#leaves i:nth-of-type(6n)  { animation-delay: 3.5s;}
+#leaves i:nth-of-type(7n)  { animation-delay: 2.8s;}
+#leaves i:nth-of-type(8n)  { animation-delay: 1.5s;}
+#leaves i:nth-of-type(9n)  { animation-delay: 3.3s;}
+#leaves i:nth-of-type(10n) { animation-delay: 2.5s;}
+#leaves i:nth-of-type(11n) { animation-delay: 1.2s;}
+#leaves i:nth-of-type(12n) { animation-delay: 3.1s;}
+#leaves i:nth-of-type(13n) { animation-delay: 1s;  }
+#leaves i:nth-of-type(14n) { animation-delay: 3.7s;}
+#leaves i:nth-of-type(15n) { animation-delay: 3s;  }
+
+#leaves i:nth-of-type(n)    { background: linear-gradient(to bottom right, #e73104, #f52207); }
+#leaves i:nth-of-type(2n+2)  { background: linear-gradient(to bottom right, #e63104, #e94b02); }
+#leaves i:nth-of-type(4n+1)  { background: linear-gradient(to bottom right, #f75105, #f54702); }
+
+#leaves i:nth-of-type(n)    { opacity: .85;}
+#leaves i:nth-of-type(3n+1)  { opacity: .95;}
+#leaves i:nth-of-type(3n+2)  { opacity: .8;}
+
+#leaves i:nth-of-type(n)    {transform: rotate(180deg);}
+
+
+#leaves i:nth-of-type(n) { animation-timing-function:ease-in-out;}
+
+@keyframes falling {
+    
+    0% {
+        transform:
+            translate3d(300,0,0)
+            rotate(0deg);
+    }
+    
+    100% {
+        transform:
+            translate3d(-350px,700px,0)
+            rotate(40deg);
+        opacity: 0;
+    }
+}
+
+@keyframes falling3 {
+     0% {
+        transform:
+            translate3d(0,0,0)
+            rotate(-20deg);
+    }
+    
+    100% {
+        transform:
+            translate3d(-230px,640px,0)
+            rotate(-70deg);
+        opacity: 0;
+    }
+}
+
+@keyframes falling2 {
+     0% {
+        transform:
+            translate3d(0,0,0)
+            rotate(50deg);
+    }
+    
+    100% {
+        transform:
+            translate3d(-400px,680px,0)
+            rotate(0deg);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,546 @@
+<div  class="scheme-section section black-theme-dark pt-1 separador">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-12 col-lg-12 text-center">
+                <div class="content-hours">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <app-countdown [endDate]="eventDate"></app-countdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="price-section" class="col-md-11 col-sm-12 col-lg-8 col_center">
+                <div class="col-12 position-relative">
+                    <div class="col-12 col-md-12 col-lg-12 text-center d-block bajada" *ngIf="active3D">
+                        <app-interactive-stadium></app-interactive-stadium>
+                    </div>
+                    <div class="info_bajada" [hidden]="active3D">
+                        <img class="img-fluid bajada" [src]="mainImage" alt=""/>
+                    </div>
+                    <button class="floating-button position-absolute d-none d-xl-block" style="bottom: 0; left: 0;" (click)="switchTo3D()" *ngIf="buttonActive">
+                        <ng-container *ngIf="!active3D">Ver 3D</ng-container>
+                        <ng-container *ngIf="active3D">Ver 2D</ng-container>
+                    </button>
+                </div>
+                <div class="thumb-images-container">
+                    <ng-container *ngFor="let image of images; let i = index">
+                        <img class="img-fluid sections cursor-pointer" [ngClass]="{'selected': mainImage === image}" [src]="image" alt="" (click)="changeMainImage(image, i)">
+                    </ng-container>  
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-lg-12 col_center">
+                <div class="table-card card border-0 tablita" data-aos="fade-right" data-aos-delay="600"
+                    data-aos-easing="ease-in-sine">
+                    <div class="card-body py-0">
+                        <div class="table-container pb-3">
+                            <div class="table-responsive">
+                                <table class="table-price table-four-cols table spaced-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">
+                                                <span class="t_sup">ZONAS</span>
+                                            </th>
+                                            <th class="text-center position-relative" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <span class="t_sup hweentxt">PROMOCIÓN HALLOWEEN</span>
+                                                <br/>
+                                                <span class="t_sup">
+                                                    <img class="hween" src="assets/images/bat.gif">
+                                                </span>
+                                                <br/>
+                                                <span class="minifecha-titulo">40% de DSCTO.</span>
+                                                <br/>
+                                                <span class="t_sup"> 12 OCT -<br/>16 OCT<span>*</span></span>
+                                            </th>
+                                            <th class="text-center">
+                                                <span class="t_sup">PROMOCIÓN EXCLUSIVA</span>
+                                                <br/>
+                                                <span class="minifecha-titulo">35% con INTERBANK</span>
+                                                <br/>
+                                                <span class="t_sup"> 10 OCT -<br/>11 NOV<span>*</span></span>
+                                            </th>
+                                            <th class="text-center">
+                                                <span class="t_sup">PRECIO FULL<span>*</span></span><br />
+                                            </th>
+                                            <th class="text-center">
+                                                <span class="t_sup">CAPACIDAD<span></span></span><br />
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_1"></span>
+                                                                ULTRA EXPERIENCE<br />
+                                                                <span class="minifechas cursor-pointer">Incluye Video Experience + Souvenir AMF + Credencial UE</span>
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                    <span class="capacity">
+                                                        (100 STAND UP)
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>989<span></span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>1,064<span></span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>1,589<span></span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    100
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_2"></span>
+                                                                BOX ROYAL INDIVIDUAL<br />
+                                                                <span class="minifechas cursor-pointer">Incluye: VIDEO EXPERIENCE</span>
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                    <span class="capacity special">
+                                                        (15 BOXES)
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>791<span></span>
+                                                    <br/>
+                                                    <span class="per-person">*Por persona</span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>851
+                                                    <br/>
+                                                    <span class="per-person">*Por persona</span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>1,271
+                                                    <br/>
+                                                    <span class="per-person">*Por persona</span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    150
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_3"></span>
+                                                                BOX ROYAL COMPLETO <br />
+                                                                <span class="minifechas cursor-pointer">Incluye: VIDEO EXPERIENCE</span>
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                    <span class="capacity special">
+                                                        (15 BOXES)
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>7,908<span></span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>8,508<span></span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>12,708
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    150
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_4"></span>
+                                                                BOX FRONT STAGE INDIVIDUAL <br />
+                                                                <span class="minifechas cursor-pointer">Incluye: VIDEO EXPERIENCE</span>
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                    <span class="capacity special">
+                                                        (60 BOXES)
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>527<span></span>
+                                                    <br/>
+                                                    <span class="per-person">*Por persona</span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>567
+                                                    <br/>
+                                                    <span class="per-person">*Por persona</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>847
+                                                    <br/>
+                                                    <span class="per-person">*Por persona</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    600
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_5"></span>
+                                                                BOX FRONT STAGE COMPLETO <br />
+                                                                <span class="minifechas cursor-pointer">Incluye: VIDEO EXPERIENCE</span>
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                    <span class="capacity special">
+                                                        (60 BOXES)
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>5,272<span></span>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>5,672<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>8,472
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    600
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_6"></span>
+                                                                ZONA DIAMOND
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>356<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>383<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>572
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    9,500
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_7"></span>
+                                                                ZONA PLATINUM
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>277<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>298<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>445
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    7,000
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_8"></span>
+                                                                ZONA GOLD
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>185<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>199<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>297
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    7,000
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_9"></span>
+                                                                TRIBUNA OCCIDENTE
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>237<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>255<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>381
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    6,500
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_10"></span>
+                                                                TRIBUNA ORIENTE
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>237<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>255<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>381
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    6,500
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="white-box">
+                                                <div class="scheme-mark">
+                                                    <strong class="place-name">
+                                                        <div class="">
+                                                            <div class="espacio_bloque t_1">
+                                                                <span class="cuadradito c_11"></span>
+                                                                TRIBUNA NORTE (APDAYC)
+                                                            </div>
+                                                        </div>
+                                                    </strong>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price" *ngIf="today > hweenSaleDateIni && today < hweenSaleDateEnd">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>79<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>85<span></span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    <span>S/</span>127
+                                                </div>
+                                            </td>
+                                            <td class="text-center white-box price">
+                                                <div class="bloque c_blanco">
+                                                    8,500
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                            <p class="extra-info my-2 text-center">* Precios incluyen comisión ticketera</p>
+                            <p class="extra-info-sm my-2 text-center col-md-8 col-12 mx-auto" [innerHTML]="tooltipHTML"></p>
+                        </div>
+                        <div id="choose-tickets-section text-center">
+                            <div class="row">
+                                <div class="col-12 col-md-10 col-lg-7 col_center items-centered">
+                                    <div class="btn-group w-100">
+                                        <a class="w-100" href="https://teleticket.com.pe/all-music-fest-2-2023#price-section" target="_blank" (click)="trackClick()">
+                                            <button type="button"
+                                                class="btn btn-primary eli_top btn_active btn_active btn_active w-100"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [disabled]="today >= preSaleDate">
+                                                <img src="assets/images/ticket.svg"><span class="button-text">PREVENTA 35% DSCTO.</span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-10 col-lg-7 col_center items-centered">
+                                    <div class="btn-group w-100">
+                                        <a class="w-100" href="https://teleticket.com.pe/all-music-fest-2-2023#price-section" target="_blank"  (click)="trackClick()">
+                                            <button type="button"
+                                                class="btn btn-primary eli_top btn_active btn_active btn_active w-100"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="assets/images/ticket.svg"><span class="button-text">COMPRAR ENTRADAS</span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

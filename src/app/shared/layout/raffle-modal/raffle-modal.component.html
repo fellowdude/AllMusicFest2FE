@@ -1,0 +1,12 @@
+
+<ng-container *ngIf="!closedModal && modalData">
+    <div class="modal-background">
+        <div class="modal-container">
+            <img [src]="modalData.imageLink" class="modal-content">
+            <a [href]="modalData.outLink" target="_blank" class="raffle-btn">
+                {{modalData.buttonText}}
+            </a>
+            <a class="cursor-pointer close-btn" (click)="closeModal($event)"><img src="assets/images/x.svg"></a>
+        </div>
+    </div>
+</ng-container>

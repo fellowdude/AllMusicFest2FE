@@ -1,0 +1,80 @@
+.modal-background {
+    background-color: rgba(0,0,0,0.7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container{
+    padding: 0em;
+    border: none;
+    background-color: black;
+    overflow: visible;
+    border-radius: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    .raffle-btn{
+        background-color: #FFB900;
+        border: none;
+        position: absolute;
+        color: white;
+        font-weight: bold;
+        padding: 0.75em;
+        font-size: 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 250px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: -30px;
+        text-align: center;
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            background-color: #e9ab00; 
+            text-decoration: none;
+        }
+    }
+
+    .close-btn {
+        width: 50px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.modal-content{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: black;
+}
+
+@media only screen and (max-width: 576px) {
+    .modal-container{
+        width: 380px;
+        .raffle-btn{
+            width: 200px;
+            font-size: 18px;
+            padding: 0.5em;
+            margin-bottom: -20px;
+        }
+        .close-btn {
+            width: 30px;
+        }
+    }
+}

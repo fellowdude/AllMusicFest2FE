@@ -1,0 +1,18 @@
+<div class="canvas-container w-100 h-100 d-flex position-relative">
+    <canvas #rCanvas id="canvas" (click)="firstClick = false"></canvas>
+    <div *ngIf="firstClick" class="position-absolute" (click)="firstClick = false">
+        <img src="assets/images/click.gif" style="width: 300px; filter: brightness(0.4) invert(1);">
+        <p style="color:white; text-align: left; position: absolute; bottom: 50px; left: 40px;"><b>Haga click<br/>en las secciones</b></p>
+    </div>
+    <div *ngIf="popupData" class="position-absolute right information-box" [ngClass]="!popupData.active ? 'exit':popupData.description.borderColor">
+        <h3 class="mt-2 mx-3">{{popupData.title}}</h3>
+        <div class="text-left px-2">
+            <p><strong>PROMOCIÓN EXCLUSIVA:</strong> <br/> {{ round(popupData.description.price) | currency: 'S/ ': 'symbol': '1.0-0'}}</p>
+            <p><strong>PRECIO FULL:</strong> <br/> {{ round(popupData.description.ogPrice) | currency: 'S/ ': 'symbol': '1.0-0'}}</p>
+            <p><strong>AFORO:</strong> <br/> {{ popupData.description.capacity | number: '0.0'}}</p>
+        </div>
+        {{popupData.imageLink}}
+        <button class="return-btn m-2 py-1" (click)="returnToView()">Regresar</button>
+    </div>
+</div>
+

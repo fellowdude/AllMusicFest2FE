@@ -1,0 +1,44 @@
+<div class="cabecera">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img class="img-fluid" src="assets/images/logo_pequeño.png"
+            alt="teleticket.com.pe" />
+        </a>
+        <div class="navbar-header page-scroll">
+            <button class="navbar-toggler oculto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+                (click)="toggleMenu()">
+                <img src="assets/images/menu.svg" height="35">
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav page-scroll">
+                <a class="nav-item nav-link" href="#page-top">INICIO <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" [href]="linkRaffle" target="_blank">SORTEO</a>
+                <a class="nav-item nav-link" href="#info">LINE-UP</a>
+                <a class="nav-item nav-link" href="#price-section">ZONAS</a>
+                <a class="nav-item nav-link" href="#legales">TERMINOS</a>
+            </div>
+        </div>
+    </nav>
+    <div class="menu col-6 ml-auto px-0" [ngClass]="{'grow': menuOpen, 'shrink': !menuOpen}" *ngIf="menuVisible">
+        <hr class="py-0 my-0"/>
+        <ul class="py-2 px-0">
+            <li>
+                <a class="nav-item nav-link" href="#page-top" (click)="toggleMenu()">INICIO</a>
+            </li>
+            <li>
+                <a class="nav-item nav-link" [href]="linkRaffle" target="_blank">SORTEO</a>
+            </li>
+            <li>
+                <a class="nav-item nav-link" href="#info" (click)="toggleMenu()">LINE-UP</a>
+            </li>
+            <li>
+                <a class="nav-item nav-link" href="#price-section" (click)="toggleMenu()">ZONAS</a>
+            </li>
+            <li>
+                <a class="nav-item nav-link" href="#legales" (click)="toggleMenu()">TERMINOS</a>
+            </li>
+        </ul>
+    </div>
+</div>

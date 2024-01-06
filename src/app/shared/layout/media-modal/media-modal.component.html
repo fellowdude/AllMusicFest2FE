@@ -1,0 +1,37 @@
+<ng-container *ngIf="!closedModal && modalData">
+    <div class="modal-background" (click)="closeModal($event)">
+        <div class="modal-container">
+            <ng-container *ngIf="modalData.type === 'image'">
+                <img [src]="modalData.link" class="modal-content">
+            </ng-container>
+            <ng-container *ngIf="modalData.type === 'video'">
+                <video class="w-100 h-100" [src]="modalData.link" autoplay loop controls="true"></video>
+            </ng-container>
+            <ng-container *ngIf="modalData.type === 'embedded-video'">
+                <div class="holds-the-iframe w-100 h-100">
+                    <iframe [src]="modalData.link | safe" title="ALL MUSIC FEST 2023" frameborder="0" allow="autoplay; encrypted-media; gyroscope;" autoplay allowfullscreen></iframe>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="modalData.type === 'message'">
+                <div class="d-flex flex-column col-10 mx-auto">
+                    <h2 class="text-white text-center my-0">
+                        COMUNICADO
+                    </h2>
+                    <img class="img-fluid logo mb-4 mx-auto" src="assets/images/logo-reggaeton.png" alt="" />
+                    <b class="text-white pb-2">Estimado Fan,</b>
+                    <p class="text-white">
+                        Queremos informarte que, debido a las condiciones del Estado de Emergencia y lo establecido por las autoridades del Estadio San Marcos, la productora ha decido trasladar el evento al Estadio Nacional con una única fecha por confirmar.
+                    </p>
+                    <p class="text-white">
+                        Recuerda que tu entrada seguirá siendo válida para la nueva locación.
+                    </p>
+                    <p class="text-white">
+                        Agradecemos tu comprensión. Te esperamos para disfrutar de un festival único con un escenario lleno de artistas internacionales.
+                    </p>
+                    <b class="text-white">SOUND MUSIC ENTERTAINMENT SAC</b>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
+

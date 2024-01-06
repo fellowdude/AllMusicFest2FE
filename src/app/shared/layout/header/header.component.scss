@@ -1,0 +1,31 @@
+.menu {
+    overflow: hidden;
+    max-height: 0px;
+    &.grow{
+        max-height: 0px;
+        animation: grow .5s forwards;
+    }
+
+    &.shrink{
+        max-height: 300px;
+        animation: shrink .3s forwards;
+    }
+}
+
+ul {
+    list-style: none;
+    background-color: black;
+    li a {
+        color: white;
+        font-weight: 600;
+        font-size: 15px;
+    }
+}
+
+@keyframes grow {
+    100% { max-height: 300px; }
+}
+
+@keyframes shrink {
+    100% { max-height: 0px; }
+}

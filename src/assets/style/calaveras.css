@@ -1,0 +1,207 @@
+/* #skull-container {
+	width: 100%;
+	position: relative;
+}
+
+#skull-container_2 {
+	width: 100%;
+	position: relative;
+}
+
+#top-skull {
+	z-index: 2;
+	position: relative;
+	width: 100%;
+}
+
+#top-skull_2 {
+	z-index: 2;
+	position: relative;
+	width: 100%;
+}
+
+#bottom-skull {
+	z-index: 2;
+	position: absolute;
+	width: 72%;
+	left: 13%;
+	bottom: -22%;
+}
+
+#bottom-skull_2 {
+	z-index: 2;
+	position: absolute;
+	width: 72%;
+	left: 13%;
+	bottom: -22%;
+}
+
+.eyes {
+	position: absolute;
+	z-index: 3;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgb(254 253 235) 20%, rgb(253 233 116) 25%, rgb(232 183 89 / 58%) 49%, rgb(255 120 51 / 77%) 90%);
+	box-shadow: 0px 0px 20px 9px #dd9620d1;
+	opacity: 0;
+}
+
+.eyes:nth-child(1) {
+	top: 44%;
+	left: 47%;
+	width: 12%;
+	height: 12%;
+}
+
+.eyes:nth-child(2) {
+	top: 49%;
+	left: 79%;
+	width: 12%;
+	height: 12%;
+}
+
+.eyes_2 {
+	position: absolute;
+	z-index: 3;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgb(254 253 235) 20%, rgb(253 233 116) 25%, rgb(232 183 89 / 58%) 49%, rgb(255 120 51 / 77%) 90%);
+	box-shadow: 0px 0px 20px 9px #dd9620d1;
+	opacity: 0;
+}
+
+.eyes_2:nth-child(1) {
+	top: 44%;
+	right: 47%;
+	width: 12%;
+	height: 12%;
+}
+
+.eyes_2:nth-child(2) {
+	top: 49%;
+	right: 79%;
+	width: 12%;
+	height: 12%;
+}
+
+.luz_boca {
+	top: 64%;
+	left: 15%;
+	width: 71%;
+	z-index: 0;
+	position: absolute;
+}
+
+.luz_boca_2 {
+	top: 64%;
+	right: 15%;
+	width: 71%;
+	z-index: 0;
+	position: absolute;
+}
+
+@keyframes openMouth {
+	from {
+		bottom: -22%;
+	}
+
+	to {
+		bottom: -32%;
+	}
+}
+
+@keyframes closeMouth {
+	from {
+		bottom: -32%;
+	}
+
+	to {
+		bottom: -22%;
+	}
+}
+
+
+
+
+@keyframes eyes {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 9;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes eyes_2 {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 9;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.calavera_der {
+	width: 50%;
+	position: absolute;
+	right: -45%;
+	top: -22%;
+}
+
+.calavera_izq {
+	width: 50%;
+	position: absolute;
+	left: -45%;
+	top: -22%;
+}
+
+
+
+
+.light1 {
+	animation-duration: 7s;
+	animation-name: wave1;
+	animation-iteration-count: infinite;
+}
+
+.light2 {
+	animation-duration: 7s;
+	animation-name: wave2;
+	animation-iteration-count: infinite;
+}
+
+@keyframes wave1 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(25deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes wave2 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(-25deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+} */

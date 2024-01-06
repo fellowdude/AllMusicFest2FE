@@ -1,0 +1,19 @@
+.sparks{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+.sparks-mirror{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: scale(-1,1);
+}
+
+.floating-corner{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99999;
+}
